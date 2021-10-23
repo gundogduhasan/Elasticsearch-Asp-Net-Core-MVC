@@ -16,8 +16,8 @@ namespace ElasticsearchWithAspNetCore.Controllers
         public IActionResult Index(string query)
         {
             ISearchResponse<Book> results;
-            int size = 10;
-            string marchQuery = query;
+            int size = 20;
+            string matchQuery = query;
 
             if (!string.IsNullOrWhiteSpace(query))
             {
@@ -41,7 +41,7 @@ namespace ElasticsearchWithAspNetCore.Controllers
 
                     q.Match(t => t  // "Match" extension'u kullanıldığında arana değerin arana field'da olması yeterli. Contains, LIKE gibi.
                         .Field(f => f.Title)//Sorgunun hangi alana uygulanacağını belirten extension.
-                        .Query(marchQuery)
+                        .Query(matchQuery)
                     )
 
                     //.Term(t => t // "Term" extension'u kullanılır ise aranan değerin bire bir aynı olması lazım. Id gibi.
