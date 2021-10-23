@@ -1,0 +1,8 @@
+﻿Elasticsearh'ün bir çok konfigürasyonu olmak ile birlikte bu projede en basit seviyede tuttum. 
+Kendimde yeni öğrendim için bazı konfigürasyonlar mantık olarak hatalı olabilir.
+
+Projeyi indirdikten sonra elasticksearch kurulumu yapılmalı.
+https://www.elastic.co/downloads/elasticsearch
+
+Projeyi geliştirirken aşağıdaki makaleden faydalandım. Ek olarak kod içerisine yardımcı olabilecek yorumlar ekledim.
+https://code-maze.com/elasticsearch-aspnet-core/

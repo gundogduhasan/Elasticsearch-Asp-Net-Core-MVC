@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*Elasticsearc call response*@
+@model Nest.ISearchResponse<Book>
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <input type="text" name="query" />
+    <input type="submit" value="Search" />
+</form>
+
+@if (Model.Documents.Any())
+{
+    <h3>Search Result</h3>
+    <ul>
+        @foreach (Book book in Model.Documents)
+        {
+            <li>Title: @book.Title (ISBN: @book.Isbn)</li>
+        }
+    </ul>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
